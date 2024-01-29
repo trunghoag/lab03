@@ -1,0 +1,75 @@
+#1. Print the following pattern Write a program to print the following number pattern using a loop..py
+for i in range(1, 6):
+    for j in range(1, i+1):
+        print(j, end=" ")
+    print()
+
+#Append new string in the middle of a given string Given two strings
+s1 = "Ault"
+s2 = "Kelly"
+
+s3 = s1[:len(s1)//2] + s2 + s1[len(s1)//2:]
+
+print(s3)
+
+#Arrange string characters such that lowercase letters should come first
+str1 = "PyNaTive"
+output = ''.join(sorted(str1, key=lambda x: x.islower()))
+print(output)
+
+#Calculate the sum of all numbers from 1 to a given number
+def calculate_sum(n):
+    sum = 0
+    for i in range(1, n+1):
+        sum += i
+    return sum
+
+number = int(input("Enter a number: "))
+result = calculate_sum(number)
+print("Sum is:", result)
+
+#Count the total number of digits in a number
+number = 1234567
+total_digits = len(str(number))
+print("Total digits are", total_digits)
+
+#Create a new string made of the first, middle, and last characters of each input string Given two strings
+s1 = "America"
+s2 = "Japan"
+
+new_string = s1[0] + s2[0] + s1[len(s1)//2] + s2[len(s2)//2] + s1[-1] + s2[-1]
+
+print(new_string)
+
+#Display numbers from a list using loop
+numbers = [75, 150, 145, 200, 250, 300, 350, 400, 450, 500, 550]
+
+for num in numbers:
+    if num % 5 == 0:
+        if num > 150:
+            continue
+        elif num > 500:
+            break
+        else:
+            print(num)
+
+#Print list in reverse order using a loop
+list1 = [10, 20, 30, 40, 50]
+
+for i in range(len(list1)-1, -1, -1):
+    print(list1[i])
+
+#Removal all characters from a string except integers
+import re
+
+str1 = 'I am 25 years and 10 months old'
+result = re.sub(r'\D', '', str1)
+print(result)
+
+#Remove special symbols punctuation from a string
+str1 = "/* John is @developer & musician"
+
+# Removing special symbols
+str1 = ''.join(e for e in str1 if e.isalnum() or e.isspace())
+
+print(str1)
