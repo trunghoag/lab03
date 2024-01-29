@@ -1,0 +1,50 @@
+#Task 1
+def is_anagram(str1, str2):
+    # Remove white space and punctuation
+    str1 = ''.join(e for e in str1 if e.isalnum())
+    str2 = ''.join(e for e in str2 if e.isalnum())
+
+    # Check if the lengths of the strings are equal
+    if len(str1) != len(str2):
+        return False
+
+    # Convert strings to lowercase
+    str1 = str1.lower()
+    str2 = str2.lower()
+
+    # Sort the characters in the strings
+    sorted_str1 = sorted(str1)
+    sorted_str2 = sorted(str2)
+
+    # Compare the sorted strings
+    if sorted_str1 == sorted_str2:
+        return True
+    else:
+        return False
+
+# Test the function
+string1 = "parliament"
+string2 = "partial men"
+print(is_anagram(string1, string2))  # Output: True
+
+string3 = "software"
+string4 = "swear oft"
+print(is_anagram(string3, string4))  # Output: True
+
+string5 = "hello"
+string6 = "world"
+print(is_anagram(string5, string6))  # Output: False
+
+#Task 2
+def convert_hex_to_decimal(hex_string):
+    try:
+        decimal_value = int(hex_string, 16)
+        print("Decimal value:", decimal_value)
+    except ValueError:
+        print("Error: Invalid hexadecimal string")
+
+# Read input from user
+hex_string = input("Enter a hexadecimal string: ")
+
+# Call the function to convert hexadecimal to decimal
+convert_hex_to_decimal(hex_string)
